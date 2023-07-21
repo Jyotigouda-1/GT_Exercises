@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Footer from './components/Footer';
-
+// Function to decode the encrypted string into an object
 const decodeString = (encodedString) => {
   const [firstName, lastName, id] = encodedString.split(/0+/).filter(Boolean);
   return {
@@ -12,13 +12,15 @@ const decodeString = (encodedString) => {
   };
 };
 const App = () => {
+  // State to store the encoded message and the decrypted message
   const [encodedMessage, setEncodedMessage] = useState('');
-  const [decryptedMessage, setDecryptedMessage] =
-    useState('');
+  const [decryptedMessage, setDecryptedMessage] =useState('');
+  // Function to handle decoding when the "Decode" button is clicke
   const handleDecode = () => {
     const decodedData = decodeString(encodedMessage);
     setDecryptedMessage(JSON.stringify(decodedData, null, 2));
   };
+  //Form
   return (
     <div className="container mt-5">
       <center><h1>Encrypted Message Decoder</h1></center>
