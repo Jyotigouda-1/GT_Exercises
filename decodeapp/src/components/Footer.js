@@ -1,3 +1,4 @@
+//Footer with my name
 import React from 'react';
 const Footer = () => {
   return (
